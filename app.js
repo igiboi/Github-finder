@@ -3,7 +3,8 @@ const searchUser = document.getElementById('searchUser');
 
 // Init Github
 const github = new Github;
-
+// Init UI
+const ui = new UI; 
 // Search Input event listener
 searchUser.addEventListener('keyup', (e) => {
   // Get input text
@@ -16,14 +17,15 @@ searchUser.addEventListener('keyup', (e) => {
        console.log(data);
         if(data.profile.message === 'Not Found') {
           // show alert
+          alert('No User found');
 
         } else {
           // Show profile
-
+          ui.showProfile(data.profile);
         }
       });
   } else {
     // Clear profile
-    
+
   }
 });
